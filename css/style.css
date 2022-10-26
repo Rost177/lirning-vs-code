@@ -15,25 +15,94 @@ ul {
 
 
 .heder {
-    background-color: black;
-    height: 50px;
-    line-height: 50px;
+    padding: 0 20px;
+    background-image: url('https://opencages.com.ua/_nuxt/img/homepage.0151b74.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+.heder::after {
+    content: "";
+background: #0c3632;
+position: absolute;
+opacity: .85;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+transition: all .25s ease;
+}
+
+.nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: space-between;
+
+}
+
+.logo-link {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+}
 
 .nav-list li {
     padding: 0 10px;
-    display: inline-block;
     color: white;
     font-weight: bold;
     font-size: 14px;
 }
 
+.nav-list li:last-of-type {
+    padding-right: 0;
+}
+
+.naw-list-link {
+    position: relative;
+    transition: all .25s ease;
+}
+
+.naw-list-link:hover {
+    color: #17baaa;
+}
+
+.naw-list-link::after {
+    content: "";
+background: #17baaa;
+height: 2px;
+width: 100%;
+position: absolute;
+bottom: -8px;
+left: 0;
+transform: scaleX(0);
+transition: all .25s ease;
+}
+
+.naw-list-link:hover::after {
+    transform: scaleX(1)
+}
+
 
 .nav-list li:last-of-type a {
-    display: block;
+    display: flex;
+    align-items: center;
     height: 30px;
-    line-height: 30px;
     padding: 0 10px;
     background-color: #dd3d53;
     border-radius: 3px;
@@ -44,8 +113,31 @@ ul {
     transition: all .25s ease;
 }
 
+.heart-icon {
+    padding-right: 7px;
+}
+
 .nav-list li:last-of-type a svg {
 width: 1em;
+}
+
+.nav-toggle {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.burger-icon {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -0.125em;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 922px) {
+    .nav-toggle {
+        display: none;
+    }
 }
 
 
